@@ -4,7 +4,7 @@ An attempt at something decent
 
 ----Classical Chess For Anarchists----
 
- {Chess But without most of the rules}
+ {Chess but without most of the rules}
 
 Yeah just an excuse to not code a proper chess game lol (Learned: How to detect collision of 2 divs, how to generate html elements almost completely from Java Script)
 
@@ -20,3 +20,7 @@ A simple class Stock which allows you to visualize stock data and also has the c
 ----YTconv----
 
 A program that uses tkinter as it's gui and selenium as a webscraper to accept a url of a youtube playlist then downloads all the videos in the selected format and saves them in a directory (Learned: Selenium, basic webscraping, basics of tkinter, etc)
+
+----Follower Analyzer----
+
+A webscraper program that checks the new or lost followers from an instagram account (Learned: Decorators,Selenium, basic webscraping)
