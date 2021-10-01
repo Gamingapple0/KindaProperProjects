@@ -16,3 +16,7 @@ A simple Pong game (Learned: how to use canvas to show animations, bounce physic
 ----Stock----
 
 A simple class Stock which allows you to visualize stock data and also has the capability to generate a simple Linear Regression model to try and predict the future value of the stock and a few other features (Learned: basics of matplotlib, pandas, sklearn, numpy, etc)
+
+----YTconv----
+
+A program that uses tkinter as it's gui and selenium as a webscraper to accept a url of a youtube playlist then downloads all the videos in the selected format and saves them in a directory (Learned: Selenium, basic webscraping, basics of tkinter, etc)
