@@ -27,4 +27,4 @@ A webscraper program that checks the new or lost followers from an instagram acc
 
 ----MediaList----
 
-A webscraper made using beautiful soup, which stores information in an excel sheet of various media forms as well as a number of score sheets.
+A webscraper made using beautiful soup, which stores information in an excel sheet of various media forms as well as a number of score sheets. (Learned: Openpyxl,Decorators,BeautifulSoup4, basic webscraping)
