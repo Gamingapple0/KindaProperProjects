@@ -24,3 +24,7 @@ A program that uses tkinter as it's gui and selenium as a webscraper to accept a
 ----Follower Analyzer----
 
 A webscraper program that checks the new or lost followers from an instagram account (Learned: Decorators,Selenium, basic webscraping)
+
+----MediaList----
+
+A webscraper made using beautiful soup, which stores information in an excel sheet of various media forms as well as a number of score sheets.
