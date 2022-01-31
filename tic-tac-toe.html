@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        .container{
+            width: 650px;
+            height: 500px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .square{
+            width: 200px;
+            height: 200px;
+            border: solid black 5px;
+        }
+        .X{
+            cursor: url('x-mark-64.png'), auto
+        }
+        .O{
+            cursor: url('circle-outline-64.png'), auto
+        }
+        .placed{
+            width: 150px;
+            height: 150px;
+            padding: 28px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="square" id='00' ></div>
+        <div class="square" id='01'></div>
+        <div class="square" id='02'></div>
+        <div class="square" id='10'></div>
+        <div class="square" id='11'></div>
+        <div class="square" id='12'></div>
+        <div class="square" id='20'></div>
+        <div class="square" id='21'></div>
+        <div class="square" id='22'></div>
+    </div>
+    <script>
+        var turn = 'o';
+        var spaces = [['*','*','*'],['*','*','*'],['*','*','*']];
+        var id, row, col, move = 0;
+        var col_val = '';
+        // $(document).ready(function(){
+        //     turn = prompt('Who goes first, X or O?')
+        // })
+        if (turn == 'x'){cnt = 1; $('.square').addClass('X');}
+        else {cnt = 2; $('.square').addClass('O')}
+        $('.square').click(function(){
+            move ++
+            if (cnt % 2 == 0){
+                $(this).html('<img src="big_circle.png" alt="O" class="placed">')
+                $(this).css("pointer-events","none")
+                id = $(this).attr('id')
+                row = id[0]
+                col = id[1]
+                spaces[row][col] = 'o'
+                $('.square').toggleClass('X O')
+                cnt ++
+            } else{
+                $(this).html('<img src="big_x.png" alt="O" class="placed">')
+                $(this).css("pointer-events","none")
+                id = $(this).attr('id')
+                row = id[0]
+                col = id[1]
+                spaces[row][col] = 'x'
+                $('.square').toggleClass('X O')
+                cnt ++
+            }
+            
+            for (let i = 0; i < 3; i++){
+                if (JSON.stringify(spaces[i]) === JSON.stringify(["o", "o", "o"])){
+                        console.log('O won')
+                        move = 0
+                    }
+                else if (JSON.stringify(spaces[i]) === JSON.stringify(["x", "x", "x"])){
+                        console.log('X won')
+                        move = 0
+                    }
+                for (let j = 0;j < 3; j++){
+                    if (spaces[j][i] == 'o'){col_val += 'o'}
+                    else if (spaces[j][i] == 'x'){col_val += 'x'}
+                }
+                if (col_val == 'ooo'){console.log('O col won'); move = 0}
+                else if (col_val == 'xxx'){console.log('X col won'); move = 0}
+                col_val = ''
+            }
+            if (spaces[0][0] == 'o' && spaces[1][1] == 'o' && spaces[2][2] == 'o' || spaces[0][2] == 'o' && spaces[1][1] == 'o' && spaces[2][0] == 'o'){
+                console.log('O won')
+                move = 0
+            }
+            else if (spaces[0][0] == 'x' && spaces[1][1] == 'x' && spaces[2][2] == 'x' || spaces[0][2] == 'x' && spaces[1][1] == 'x' && spaces[2][0] == 'x'){
+                console.log('X won')
+                move = 0
+            }  
+            if (move == 9){
+                console.log('draw')
+            }
+            else if(move == 0){
+                $('.square').css('pointer-events', 'none')
+            }
+
+        })
+
+
+        
+    </script>
+</body>
+</html>
